@@ -1,11 +1,20 @@
 Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent { docker { image 'maven:3.3.3' } }
+    agent any 
     stages {
         stage('build') {
             steps {
-                sh 'npm --version'
+                echo 'build stage here'
             }
         }
-    }
+        stage('test') {
+            steps {
+                echo 'test stage here'
+                }
+            }
+        stage('dev') {
+            steps {
+                echo 'development stage here'
+            }
+        }
 }
